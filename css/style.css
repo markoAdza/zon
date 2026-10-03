@@ -3,6 +3,7 @@
   --blue-dark: #2f78bf;
   --star: #4b86c4;
   --orange: #e8742a;
+  --red: #d32f2f;
   --text: #222;
   --nav-text: #333;
   --muted: #777;
@@ -366,6 +367,7 @@ img { display: block; max-width: 100%; }
 .article-body { font-size: 18px; line-height: 1.75; color: #333; }
 .article-body p { margin: 0 0 1.3em; }
 .article-body .lead { font-weight: 500; color: #111; }
+.article-body .highlight { color: var(--red); }
 
 .related { margin: 0 0 80px; }
 

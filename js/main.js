@@ -18,8 +18,10 @@
     });
   }
 
+  // The slug goes in the hash, not the query: browsers keep the hash across
+  // redirects (e.g. serve's clanek.html -> /clanek), which drop ?id=.
   function articleUrl(a) {
-    return "clanek.html?id=" + encodeURIComponent(a.slug);
+    return "clanek.html#" + encodeURIComponent(a.slug);
   }
 
   function tagsHtml(tags) {
@@ -53,8 +55,24 @@
   // ---------- Article page ----------
 
   var articleEl = document.getElementById("article");
-  if (articleEl) {
-    var id = new URLSearchParams(window.location.search).get("id");
+
+  // clanek.html#slug; clanek.html?id=slug still works for old links.
+  function currentArticleId() {
+    return decodeURIComponent(window.location.hash.slice(1)) ||
+      new URLSearchParams(window.location.search).get("id");
+  }
+
+  // A paragraph is a string, or { text, highlight: true } to show it in red.
+  function paragraphHtml(p, i) {
+    var classes = [];
+    if (i === 0) classes.push("lead");
+    if (p.highlight) classes.push("highlight");
+    var text = typeof p === "string" ? p : p.text;
+    return "<p" + (classes.length ? ' class="' + classes.join(" ") + '"' : "") + ">" + esc(text) + "</p>";
+  }
+
+  function renderArticle() {
+    var id = currentArticleId();
     var article = articles.filter(function (a) { return a.slug === id; })[0];
 
     if (!article) {
@@ -71,7 +89,7 @@
       '<figure><img src="' + esc(article.image) + '" alt="">' +
       "<figcaption>Foto: " + esc(article.credit) + "</figcaption></figure>" +
       '<div class="article-body">' +
-      LOREM.map(function (p, i) { return "<p" + (i === 0 ? ' class="lead"' : "") + ">" + p + "</p>"; }).join("") +
+      (article.body || LOREM).map(paragraphHtml).join("") +
       "</div>";
 
     document.getElementById("related-grid").innerHTML = articles
@@ -79,6 +97,15 @@
       .slice(0, 4)
       .map(function (a) { return cardHtml(a, false); })
       .join("");
+  }
+
+  if (articleEl) {
+    renderArticle();
+    // "Preberite še" links only change the hash, so the page does not reload.
+    window.addEventListener("hashchange", function () {
+      renderArticle();
+      window.scrollTo(0, 0);
+    });
   }
 
   // ---------- Navigation ----------
@@ -116,17 +143,25 @@
   // ---------- Favourite star ----------
 
   var star = document.querySelector(".star-btn");
-  var starKey = "zon-demo-star:" + window.location.pathname + window.location.search;
+
+  function starKey() {
+    return "zon-demo-star:" + window.location.pathname + window.location.search + window.location.hash;
+  }
 
   function setStar(on) {
     star.setAttribute("aria-pressed", String(on));
   }
 
-  try { setStar(localStorage.getItem(starKey) === "1"); } catch (e) { /* storage unavailable */ }
+  function loadStar() {
+    try { setStar(localStorage.getItem(starKey()) === "1"); } catch (e) { /* storage unavailable */ }
+  }
+
+  loadStar();
+  window.addEventListener("hashchange", loadStar);
 
   star.addEventListener("click", function () {
     var on = star.getAttribute("aria-pressed") !== "true";
     setStar(on);
-    try { localStorage.setItem(starKey, on ? "1" : "0"); } catch (e) { /* storage unavailable */ }
+    try { localStorage.setItem(starKey(), on ? "1" : "0"); } catch (e) { /* storage unavailable */ }
   });
 })();

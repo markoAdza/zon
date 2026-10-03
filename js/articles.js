@@ -1,6 +1,25 @@
 // Vsi članki na strani. Avtorji so izmišljeni (demo), fotografije so z Unsplasha.
 window.ZON_ARTICLES = [
   {
+    slug: "locevanje-odpadkov-velickova-cesta",
+    title: "Na Veličkovi cesti ne ločujejo odpadkov",
+    tags: ["Aktualno", "Hrastnik"],
+    author: "Uredništvo ZON",
+    date: "03. 10. 2026",
+    image: "img/locevanje.jpg",
+    credit: "osebni arhiv",
+    featured: true,
+    body: [
+      "Stanovalci Veličkove ceste 16 v Hrastniku niso ločevali odpadkov.",
+      "Ob hiši stojijo zabojniki za ostale in za biološke odpadke, a vsebina v njih ni bila takšna, kot bi morala biti. V zabojnikih za biološke odpadke so se znašli odpadki, ki tja ne sodijo, v zabojniku za ostale odpadke pa tudi embalaža, ki bi morala v rumeni zabojnik.",
+      "Pravila ločevanja veljajo za vsa gospodinjstva v občini Hrastnik in so stanovalcem znana. Na tem naslovu jih kljub temu niso upoštevali.",
+      { text: "Stanovalci Veličkove ceste 16 bodo zato ustrezno kaznovani.", highlight: true },
+      "Ločevanje ni le formalnost. Pravilno ločene odpadke je mogoče predelati in ponovno uporabiti, na odlagališče pa gre manj smeti. Ko se med biološkimi odpadki znajdeta plastika ali steklo, je treba celotno vsebino zabojnika obravnavati kot mešane odpadke, kar pomeni več dela in višje stroške za vse.",
+      "Kam kaj sodi? V rjavi zabojnik ostanki hrane, olupki sadja in zelenjave, kavna usedlina ter vrtni odpadki. V rumenega plastenke, pločevinke, tetrapak in druga embalaža. V modrega papir in karton, v zabojnik za steklo pa steklenice in kozarci. V zabojnik za ostale odpadke odvrzite le tisto, česar ni mogoče ločiti.",
+      "Ob tem vse občane opominjamo, da pravila veljajo za vse: odpadke ločujmo že doma, preden jih odnesemo do zabojnikov.",
+    ],
+  },
+  {
     slug: "sezona-na-vrhuncu",
     title: "Sezona na vrhuncu: Na eni strani že 40 let, na drugi pot pod zemljo",
     tags: ["Aktualno", "Hrastnik", "Litija", "Šport", "Trbovlje", "Zagorje"],
@@ -8,7 +27,6 @@ window.ZON_ARTICLES = [
     date: "02. 10. 2026",
     image: "img/sezona.jpg",
     credit: "MChe Lee / Unsplash",
-    featured: true,
   },
   {
     slug: "avtomobil-za-300-evrov",
