@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 112" aria-hidden="true">
+  <defs>
+    <linearGradient id="box" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9d9d9"/>
+      <stop offset="1" stop-color="#8f8f8f"/>
+    </linearGradient>
+  </defs>
+  <!-- ballot paper going into the slot -->
+  <g transform="rotate(-12 92 40)">
+    <rect x="70" y="4" width="46" height="58" rx="2" fill="#f4f4f4"/>
+    <path d="M80 30 l7 8 l16 -18" fill="none" stroke="#e8742a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- box -->
+  <path d="M28 58 L132 58 L148 110 L12 110 Z" fill="url(#box)"/>
+  <rect x="58" y="54" width="54" height="7" rx="3" fill="#2b2b2b"/>
+</svg>

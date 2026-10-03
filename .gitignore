@@ -1,0 +1,13 @@
+# Private photos in the project root are not part of the site
+/*.jpeg
+/*.jpg
+/*.JPG
+/*.JPEG
+/*.png
+/*.heic
+/*.HEIC
+
+node_modules/
+.vercel/
+.DS_Store
+Thumbs.db

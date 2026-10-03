@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Članek – ZON.si (demo)</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="ZON.si – domov">
+        <img src="img/logo.svg" alt="ZON.si" width="170" height="65">
+        <span class="demo-badge">DEMO</span>
+      </a>
+      <a class="banner" href="#" aria-label="Odprli smo rubriko: Lokalne volitve 2026">
+        <span class="banner-text">
+          <span class="bracket bracket-l" aria-hidden="true"></span>
+          <span class="banner-lead">Odprli smo rubriko:</span>
+          <span class="banner-title">Lokalne volitve <em>2026</em></span>
+          <span class="bracket bracket-r" aria-hidden="true"></span>
+        </span>
+        <img class="banner-img" src="img/ballot.svg" alt="">
+      </a>
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Glavni meni">
+    <div class="container nav-inner">
+      <button class="nav-toggle" aria-label="Meni" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list">
+        <li class="has-sub"><a href="#">Aktualno</a>
+          <ul class="sub"><li><a href="#">Novice</a></li><li><a href="#">Lokalne volitve 2026</a></li><li><a href="#">Napovednik</a></li></ul></li>
+        <li class="has-sub"><a href="#">Intervju</a>
+          <ul class="sub"><li><a href="#">Pogovori</a></li><li><a href="#">Portreti</a></li></ul></li>
+        <li class="has-sub"><a href="#">Podkast</a>
+          <ul class="sub"><li><a href="#">Vse epizode</a></li><li><a href="#">Gostje</a></li></ul></li>
+        <li class="has-sub"><a href="#">Kronika</a>
+          <ul class="sub"><li><a href="#">Policija</a></li><li><a href="#">Gasilci</a></li><li><a href="#">Sodišče</a></li></ul></li>
+        <li class="has-sub"><a href="#">Občine</a>
+          <ul class="sub"><li><a href="#">Hrastnik</a></li><li><a href="#">Litija</a></li><li><a href="#">Trbovlje</a></li><li><a href="#">Zagorje</a></li></ul></li>
+        <li class="has-sub"><a href="#">Brez filtra</a>
+          <ul class="sub"><li><a href="#">Kolumne</a></li><li><a href="#">Mnenja</a></li></ul></li>
+        <li class="has-sub"><a href="#">1+1=2</a>
+          <ul class="sub"><li><a href="#">Družina</a></li><li><a href="#">Izobraževanje</a></li></ul></li>
+        <li class="has-sub"><a href="#">Šport</a>
+          <ul class="sub"><li><a href="#">Nogomet</a></li><li><a href="#">Rokomet</a></li><li><a href="#">Košarka</a></li><li><a href="#">Ostali športi</a></li></ul></li>
+        <li class="has-sub"><a href="#">Doživetja</a>
+          <ul class="sub"><li><a href="#">Prireditve</a></li><li><a href="#">Izleti</a></li><li><a href="#">Kulinarika</a></li></ul></li>
+      </ul>
+      <a class="nav-volitve" href="#"><span class="br">[</span>Lokalne volitve <em>2026</em><span class="br">]</span></a>
+      <form class="nav-search" role="search" onsubmit="return false">
+        <input type="search" placeholder="Iskanje …" aria-label="Iskanje">
+        <button type="button" class="search-toggle" aria-label="Iskanje">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7.5"/><path d="M16 16l5.5 5.5"/></svg>
+        </button>
+      </form>
+    </div>
+  </nav>
+
+  <main class="container article-page" id="article-page">
+    <article class="article" id="article"></article>
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title" class="section-title">Preberite še</h2>
+      <div class="related-grid" id="related-grid"></div>
+    </section>
+  </main>
+
+  <button class="star-btn" aria-label="Shrani med priljubljene" aria-pressed="false">
+    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2.8l2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.36l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>
+  </button>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="img/logo.svg" alt="ZON.si" width="110" height="42">
+      <p>© 2026 ZON.si · <strong>Demo različica – ni uradna stran ZON.si.</strong> Fotografije: Unsplash.</p>
+    </div>
+  </footer>
+
+  <script src="js/articles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
